@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+
+  urbackup-server:
+    image: uroni/urbackup-server
+    ports:
+      - "55413-55415:55413-55415"
+      - "35623:35623/udp"
+    volumes:
+      - /media/backups:/backups
+      - /media/database:/var/urbackup
+    restart: always
+
