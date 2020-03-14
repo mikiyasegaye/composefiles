@@ -10,4 +10,3 @@ services:
       - /media/backups:/backups
       - /media/database:/var/urbackup
     restart: always
-

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if cat /sys/class/net/wlxf4f26d185326/operstate | grep down;
+then
+        sudo ifconfig wlxf4f26d185326 up;
+        sudo wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlxf4f26d185326;
+else
+        echo "interface already up";
+fi 
+
+if ip route | grep wlxf4f26d185326
+then
+        echo "No need to start dhclient";
+else
+        sudo dhclient wlxf4f26d185326;
+fi  
