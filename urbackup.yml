@@ -9,4 +9,5 @@ services:
     volumes:
       - /media/backups:/backups
       - /media/database:/var/urbackup
+      - /media/logs:/var/log
     restart: always
